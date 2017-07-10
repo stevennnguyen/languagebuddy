@@ -10,7 +10,7 @@ export class EventsService {
 
   //Seek the plain text data at the end point, then map the data to a valid json object.
   fetchEvents() {
-    return this.http.get("https://api.meetup.com/Orange-County-American-Japanese-Language-and-Friendship/events?photo-host=public&page=2&sig_id=203258650&sig=411f991b03f4b41ff91f89cc0193bef3a9ef5e18").map(
+    return this.http.get("http://localhost:4000/api/events").map(
       (res) => res.json()
     );
   }

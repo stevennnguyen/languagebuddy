@@ -1,13 +1,23 @@
+//better for optimization and represents a data structure that contains information that will never change
 const express = require('express');
-const mongosse = require('mongoose');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const cors = require('cors');
 
 //set up express app
 const app = express();
 
-//connect to mongodb
+//allow cors
+app.use(cors());
 
-//serve static files
+//connect to mongodb
+mongoose.connect('mongodb://localhost/ninjago', {useMongoClient: true});
+mongoose.Promise = global.Promise;
+
+//serve up all our static files
 app.use(express.static('public'));
+
+app.use(bodyParser.json());
 
 //initialize routes
 app.use('/api', require('./routes/api'));
@@ -15,6 +25,7 @@ app.use('/api', require('./routes/api'));
 //error handling middleware
 app.use(function(err, req, res, next){
     res.status(422).send({error: err.message});
+    //console.log(err);
 });
 
 //listen for requests
