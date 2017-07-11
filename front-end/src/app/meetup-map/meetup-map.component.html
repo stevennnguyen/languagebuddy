@@ -1,15 +1,24 @@
 <!-- this creates a google map on the page with the given lat/lng from -->
 <!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-  <agm-marker [latitude]="lat2" [longitude]="lng2"></agm-marker>
+<agm-map [latitude]="homeLat" [longitude]="homeLng">
+  <agm-marker *ngFor="let event of events" [latitude]="event.venue.lat" [longitude]="event.venue.lon">
+    <agm-info-window>
+      <strong>{{event.name}}</strong>
+      <p>{{event.venue.address_1}}, {{event.venue.city}}, {{event.venue.country}} {{event.venue.zip}}</p>
+    </agm-info-window>
+  </agm-marker>
+  <agm-marker [latitude]="homeLat" [longitude]="homeLng"></agm-marker>
 </agm-map>
 
+
+<p>This is your home location: {{homeLat}}, {{homeLng}}</p>
 <ul>
   <li *ngFor="let event of events">
     Group: {{event.name}}
     <br />
     Description: {{event.description}}
     <br /><br />
+    {{event.venue.lat}}
+    {{event.venue.lon}}
   </li>
 </ul>
