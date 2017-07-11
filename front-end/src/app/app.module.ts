@@ -6,11 +6,15 @@ import { MeetupMapComponent } from './meetup-map/meetup-map.component';
 
 import { HttpModule } from '@angular/http'; 
 import { AgmCoreModule } from '@agm/core';
+import { NavComponent } from './nav/nav.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MeetupMapComponent
+    MeetupMapComponent,
+    NavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

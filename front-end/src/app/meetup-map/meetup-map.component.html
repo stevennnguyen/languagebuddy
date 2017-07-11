@@ -6,19 +6,41 @@
       <strong>{{event.name}}</strong>
       <p>{{event.venue.address_1}}, {{event.venue.city}}, {{event.venue.country}} {{event.venue.zip}}</p>
     </agm-info-window>
+    <!-- This feels really hacky since I've nested one marker inside of another one (that's currently being looped, so a new home marker is constantly being created.. I believe
+    The home marker also works if I play it outside of the market but on top of the looped market, it's just that the box appears off to the side. When the home market is placed
+    below the looped marker, the window doesn't open.-->
+    <agm-marker [latitude]="homeLat" [longitude]="homeLng" label="H">
+      <agm-info-window>
+        Home, Fix This
+      </agm-info-window>
+    </agm-marker>
+
   </agm-marker>
-  <agm-marker [latitude]="homeLat" [longitude]="homeLng"></agm-marker>
 </agm-map>
 
-
+<!--No styling for lists, add address, maybe a pipe to order from closest to least, option for date, etc.-->
+<!--Maybe add distance from where you currently live-->
 <p>This is your home location: {{homeLat}}, {{homeLng}}</p>
-<ul>
+<ul class="list-unstyled">
   <li *ngFor="let event of events">
-    Group: {{event.name}}
+    <strong>{{event.name}}</strong>
     <br />
-    Description: {{event.description}}
+    {{event.venue.address_1}}, {{event.venue.city}}, {{event.venue.country}} {{event.venue.zip}}
+    <br />Distance: 
+    {{getDistance(
+      {
+        "lat":homeLat,
+        "lng":homeLng
+        },
+      {
+        "lat":event.venue.lat,
+        "lng":event.venue.lon
+      }
+    )}}
+    Miles
+    <br />
+    {{event.description}}
     <br /><br />
-    {{event.venue.lat}}
-    {{event.venue.lon}}
   </li>
 </ul>
+
