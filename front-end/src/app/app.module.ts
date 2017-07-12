@@ -11,9 +11,13 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [
   { path: '', component: MeetupMapComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact', component: ContactComponent },
   { path: 'resources', component: ResourcesComponent },
 ];
 
@@ -23,7 +27,9 @@ const appRoutes: Routes = [
     MeetupMapComponent,
     NavComponent,
     FooterComponent,
-    ResourcesComponent
+    ResourcesComponent,
+    AboutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
