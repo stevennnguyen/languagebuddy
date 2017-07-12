@@ -6,12 +6,12 @@ Language Buddy was created for two specific purposes.
 
 ## To Do
 **Map**
-..*Meetup API - return nearby events of groups that I am in
-..*Google Maps - using coordinates from Meetup API, create markers
-..*Google Maps - POST current location and application regenerate markers
-..*Google Maps - Upon clicking a marker provide some sort of directions(?)
+*Meetup API - return nearby events of groups that I am in
+*Google Maps - using coordinates from Meetup API, create markers
+*Google Maps - POST current location and application regenerate markers
+*Google Maps - Upon clicking a marker provide some sort of directions(?)
 **Resources**
-..*Setup database to store the language information
-..*GET /languages
-..*GET /languages/:language
-..*POST: Live edit data
+*Setup database to store the language information
+*GET /languages
+*GET /languages/:language
+*POST: Live edit data
