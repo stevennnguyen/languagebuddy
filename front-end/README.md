@@ -1,7 +1,5 @@
 # Languagebuddy
 
-Making language learning easier http://stevennnguyen.github.io/languagebuddy.html
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.0.
 
 ## Development server
