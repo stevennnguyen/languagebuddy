@@ -11,8 +11,8 @@ const app = express();
 app.use(cors());
 
 //connect to mongodb
-mongoose.connect('', {useMongoClient: true});
-mongoose.Promise = global.Promise;
+//mongoose.connect('mongodb://localhost/resources', {useMongoClient: true});
+//mongoose.Promise = global.Promise;
 
 //serve up all our static files
 app.use(express.static('public'));
