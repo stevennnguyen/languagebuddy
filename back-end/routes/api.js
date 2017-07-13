@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const request = require('request');
+const Resource = require('../models/resource');
 
 //get a list of meetup events
 router.get('/events', function(req, res, next){
@@ -12,5 +13,9 @@ router.get('/events', function(req, res, next){
     })
 });
 
-//https://api.meetup.com/Orange-County-American-Japanese-Language-and-Friendship/events?photo-host=public&page=2&sig_id=203258650&sig=411f991b03f4b41ff91f89cc0193bef3a9ef5e18
+//get a list of resources from the db
+router.get('/resources', function(req, res){
+    res.send('GET');
+});
+
 module.exports = router;

@@ -10,6 +10,7 @@ Language Buddy was created for two specific purposes.
 * Google Maps - using coordinates from Meetup API, create markers
 * Google Maps - POST current location and application regenerate markers
 * Google Maps - Upon clicking a marker provide some sort of directions(?)
+
 **Resources**
 * Setup database to store the language information
 * GET /languages

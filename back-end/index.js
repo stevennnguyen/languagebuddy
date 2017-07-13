@@ -11,7 +11,7 @@ const app = express();
 app.use(cors());
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost/ninjago', {useMongoClient: true});
+mongoose.connect('', {useMongoClient: true});
 mongoose.Promise = global.Promise;
 
 //serve up all our static files

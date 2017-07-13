@@ -20,7 +20,7 @@ export class MeetupMapComponent implements OnInit {
   ngOnInit() {
     this.eventsService.fetchEvents().subscribe(
       (events) => this.events = events.results
-    )
+    );
   }
 
   rad = function(x) {
