@@ -40,8 +40,20 @@ export class MeetupMapComponent implements OnInit {
     return d; // returns the distance in meter
 };
 
-  /*getDistance = function(p1,p2){
-    console.log(p1.lat,p2.lat);
-  }*/
+  convertEpoch = function (epoch){
+    var t = new Date();
+    var n = t.getTime();
+    var d = new Date(epoch);
+    var formattedDate = (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear();
+    var hours = (d.getHours() < 10) ? "0" + d.getHours() : d.getHours();
+    var minutes = (d.getMinutes() < 10) ? "0" + d.getMinutes() : d.getMinutes();
+    var formattedTime = hours + ":" + minutes;
+
+    formattedDate = formattedDate + " " + formattedTime;
+    if( (t.getDate()+t.getDay()+t.getFullYear()) == (d.getDate()+d.getDay()+d.getFullYear()) ){
+      return formattedDate + " TODAY!";
+    }
+    return formattedDate;
+  }
 
 }

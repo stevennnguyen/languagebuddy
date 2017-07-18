@@ -14,6 +14,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { FormsModule }   from '@angular/forms'; // <-- NgModel lives here
+
 const appRoutes: Routes = [
   { path: '', component: MeetupMapComponent },
   { path: 'about', component: AboutComponent },
@@ -40,7 +42,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true }
-    )
+    ),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

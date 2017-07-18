@@ -25,7 +25,7 @@
 <p>This is your home location: {{homeLat}}, {{homeLng}}</p>
 <ul class="list-unstyled">
   <li *ngFor="let event of events">
-    <strong>{{event.name}}</strong>
+    <strong>{{event.name}}</strong> <span>{{convertEpoch(event.time)}}</span>
     <br />
     {{event.venue.address_1}}, {{event.venue.city}}, {{event.venue.country}} {{event.venue.zip}}
     <br />Distance: 
